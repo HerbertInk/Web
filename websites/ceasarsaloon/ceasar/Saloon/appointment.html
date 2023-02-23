@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Appointments</title>
+
+    <link rel="icon" type="image/x-icon" href="logofav/favicon.ico">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css -->
+    <link rel="stylesheet" href="navstyle.css">
+    <link rel="stylesheet" href="footer_style.css">
+    <link rel="stylesheet" href="ceaserstyle.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="validate.js"></script>
+    <?php include"connectdb.html"?>
+</head>
+
+<body>
+     
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <h3><span class="logo navLogo"><a href="#">THE Ceasor Saloon</a></span></h3>
+            <span class="logo navLogo"><a href="#"><img src="" alt=""></a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">The Ceasor saloon</a></span>
+
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+
+                    <a href="home.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="appointment.html">Appointment</a>
+                    <a href="about.html">About US</a>
+                    <a href="contact.html">Contact US</a>
+                           
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+            </div>
+
+            <div class="searchBox">
+
+                <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                </div>
+
+                <div class="search-field">
+                    <input type="text" placeholder="Search...">
+                    <i class='bx bx-search'></i>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+            <script src="navscript.js"></script>
+
+    <div class="appoint">
+
+        <div class="appoint-size">
+
+            <h2>Register with us for you bookings in the form provided.</h2>
+
+            <fieldset>
+
+                <legend class="fill_in">Booking Form</legend>
+
+                <form action="" method="post" name="registration" id = "appointme" onsubmit="return(validateForm())">
+
+                    Service: <select name="service" id="selects">
+
+                        <option value=""></option>
+                        <option value="hairstyle">Afro For Men</option>
+                        <option value="hairstyle">Dreadlocks</option>
+                        <option value="hairstyle">Ceasar cut</option>
+                        <option value="hairstyle">Low skin fade haircut</option>
+                        <option value="hairstyle">Medium men hairstyle haircut</option>
+                        <option value="hairstyle">Long wavy hair</option>
+                        <option value="hairstyle">Messy comb over fade</option>
+                        <option value="hairstyle">Men side part</option>
+                        <option value="hairstyle">Men Undercut</option>
+                        <option value="hairstyle">Men Buzz Cut</option>
+                        <option value="hairstyle">Curly hair with trimmed beard</option>
+                        <option value="hairstyle">Curly hair fade</option>
+                        <option value="hairstyle">Black hair temple fade</option>
+                        <option value="haircuts">burst fade haircut</option>
+
+                        </select><br> Date:<br>
+                        <input type="date" name="date"><br>
+
+                    Name:<br>
+                    <input type="text" name="name"><br>
+
+                    Email:<br>
+                    <input type="email" name="email"><br>
+
+                    Phone number:<br>
+                    <input type="tel" name="phone"><br>
+                    <input type="submit" value="Submit" name="send">
+
+                </form>
+            </fieldset>
+
+            <?php
+                if (isset($_POST['send'])){
+                $service = $_POST['service'];
+                $date = $_POST['date'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $telephone = $_POST['phone'];
+                if($service=="" && $email==""){
+                    echo("please enter service and email");
+                }else{
+                mysqli_query($conn,"insert into appointments (service,dos,fname,email,phonenumber) 
+                values('$service','$date','$name','$email','$telephone')")or die("error");
+                echo ("appointment received");
+                }}
+            ?>
+
+        </div>
+
+    </div>
+
+    <!-- Footer-->
+    <section class="footer-distributed">
+        <footer>
+            <div class="footer-left">
+                <h3>THE Ceaser Saloon<span></span></h3> <!--logo-->
+                <p class="footer-links">
+                    
+                    <a href="home.html" class="link-1">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="appointment.html">Appointment</a>
+                    <a href="about.html">About US</a>
+                    <a href="contact.html">Contact US</a>
+                   
+                </p>
+
+                <div class="point">
+                    <ul>
+                        <li>Intergrity</li>
+                        <li>Innovation</li>
+                        <li>Customer love</li>
+                        <li>Fun</li>
+                        <li>High Performing Team</li>
+                        <li>Community</li>
+                        <li>Team work</li>
+                    </ul>
+
+                </div>
+
+                <br>
+                <p class="footer-company-name">THE Ceaser Saloon © 2022</p>
+
+            </div>
+
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>25 Bushenyi, Ishaka, Western Uganda</span> Bushenyi, Uganada</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p><a href="+256756548699">+256756548699</a></p>
+                    <p><phone><a href="+256756548699">+256756548699</a></phone></p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:byamujulius@gmail.com">byamujulius@gmail.com</a> </p>
+                </div>
+                <div class="motto">
+                    <p><a href=""></a>For your characher, </p>
+                </div>
+            </div>
+
+            <div class="footer-right" >
+                <p class="footer-company-about">
+                    <span>About the company</span>
+                    We do all fine hair styles along body massage
+                    Our team of qulified personnel is in to serve you
+                    You to the best deserved...<br>
+                    These are the things that we wakeup to perform every single day
+                    of the year.These values are the engines that drives us,
+                    holds the team together and enables us to deliver quality services.
+                </p>
+                <div class="footer-icons">
+
+                    <a href="https://www.facebook.com/Julius"><i class="fab fa-facebook-f"></i></a>
+                    <a href="http://www.instagram.com/Julius"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/Julius"><i class="fab fa-twitter"></i></a>
+                    <a href="http://www.github.com/Julius"><i class="fab fa-github"></i></a>
+
+                </div>
+            </div>
+
+        </footer>
+    </section>
+
+    <!-- footer-->
+</body>
+
+</html>

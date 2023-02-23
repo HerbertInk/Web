@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root{
+    --main-color:#d3ad7f;
+    --black:#13131a;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    transition: .4s ease-in-out;
+}
+
+html{
+    font-size: 55.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--bg);
+}
+
+section{
+    padding:2rem 7%;
+}
+
+.heading{
+    text-align: center;
+    color:#fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.9rem 3rem;
+    font-size: 1.7rem;
+    color:#ffffff;
+    background: var(--main-color);
+    cursor: pointer;
+    border-radius: 60px;
+}
+
+.btn-home{
+    display:grid;
+    padding: 10px;
+    font-size: 20px;
+    color:#ffffff;
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.btn-about{
+    display:grid;
+    padding: 10px;
+    font-size: 20px;
+    color:#ffffff;
+    background: var(--main-color);
+    cursor: pointer;
+    width: 100px;
+}
+
+.services-btn{
+    display: none;
+}
+
+.header .search-form{
+    position: absolute;
+    top:115%; right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search-form.active{
+    transform: scaleY(1);
+}
+
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:1rem;
+    text-transform: none;
+}
+
+.header .search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color:var(--black);
+}
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:url(ipng/dangcutshair-burst-fade-cool-haitcuts-for-men-e1486162055281.jpg) no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+.home .content{
+    max-width: 100rem;
+}
+
+.home .content h2{
+    font-size: 25px;
+    color:#fff;
+}
+
+.home .content h3{
+    font-size: 40px;
+    text-transform: uppercase;
+    color:#fff;
+}
+
+.home .content p{
+    font-size: 15px;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding:1rem 0;
+    color:#eee;
+}
+
+.about{
+    padding-top: 80px;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    background:var(--black);
+    flex-wrap: wrap;
+}
+
+.about .row .image{
+    flex:1 1 45rem;
+}
+
+.about .row .image img{
+    width: 100%;
+}
+.about .row .content{
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color:#fff;
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color:#ccc;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+.about h1{
+    font-size: 40px;
+    color:rgb(240, 228, 228);
+    padding:1rem 0;
+    line-height: 1.8;
+}
+.about p{
+    font-size: 1.6rem;
+    color:rgb(240, 228, 228);
+    padding:1rem 0;
+    line-height: 1.8;
+}
+
+.services{
+    padding-top: 100px;
+}
+
+.services .iservice{
+    align-content: center;
+    color: cornsilk;
+}
+
+.iservice{
+    align-content: center;
+    padding-left: 400px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    font-style: oblique;
+    box-sizing: content-box;
+    line-height: 10px;
+}
+
+.services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.services .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:var(--border);
+    color:cornsilk;   
+    font-size: 11px;
+}
+
+.services .box-container .box img{
+    height: 10rem;
+}
+
+.services .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.services .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding:.5rem 0;
+}
+
+.services .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.review .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.review .box-container .box{
+    border:var(--border);
+    text-align: center;
+    padding:3rem 2rem;
+}
+
+.review .box-container .box p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color:#ccc;
+    padding:2rem 0;
+}
+
+.review .box-container .box .user{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review .box-container .box h3{
+    padding:1rem 0;
+    font-size: 2rem;
+    color:#fff;
+}
+
+.review .box-container .box .stars i{
+    font-size: 1.5rem;
+    color:var(--main-color);
+}
+
+.appoint{
+    padding-top: 80px;
+}
+
+.appoint{
+    position:relative;
+    left: 50%;
+    margin-bottom: -250px;
+    margin-top: 450px;
+    transform: translate(-50% , -50%);
+    background:whitesmoke;
+    width: 35%;
+    height: 100vh;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0px 15px 18px 5px var(--main-color);
+}
+
+.appoint .appoint-size{    
+    word-spacing: 5px;
+    line-height: 3.2rem;
+    padding: 50px 20px 10px 10px;
+}
+
+.appoint .fill_in{
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    font-weight: 200;
+    display: inline;
+    padding-left: 80px;
+}
