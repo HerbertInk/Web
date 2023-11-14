@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div>
+        <h3>Update profile, save when done</h3>
+    </div>
+    
+    <div class="centered-box">
+        <div class="edge">
+
+            <form id="user-profile-form" onsubmit="return validateForm()">
+
+                <h2 class="form-heading">User Profile</h2>
+
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" required placeholder="First name"><br>
+    
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" required placeholder="Surname"><br>
+    
+                <label for="username">Username:</label>
+                <input type="text" id="username" required placeholder="username"><br>
+    
+                <label for="contact-info">Contact</label>
+                <input type="text" id="contact-info" pattern=".{10,15}" required
+                placeholder="Include country code Contact [10-13 digits]">
+                <br>
+                
+                <label for="create-password">Create Password</label>
+                <input type="password" id="create-password" required placeholder="Password"><br>
+    
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" required><br>
+                
+                <div>
+                    <label>Gender:</label>
+                    <input type="radio" name="gender" value="M" required> Male
+                    <input type="radio" name="gender" value="F" required> Female
+                </div>
+                <br>                
+                
+                <label for="bio">More about you...</label>
+                <br>
+                <textarea id="bio" rows="4" maxlength="150" placeholder="Uer bio maximum of 150 character">
+                </textarea>
+                <br>
+
+                <div class="done">
+                    <button type="submit">save</button>
+                </div>
+    
+            </form>
+
+        </div>
+    </div>
+    <!--js-->
+    <script src="script.js"></script>
+</body>
+</html>
